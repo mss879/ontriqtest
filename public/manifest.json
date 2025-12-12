@@ -1,0 +1,27 @@
+{
+  "name": "Ontriq - Your Complete Workforce and Business Partner",
+  "short_name": "Ontriq",
+  "description": "Sri Lanka's leading Background Verification, HR Solutions, Recruitment, Payroll Management, and Business Formation services.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#F75834",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/ontriq favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/ontriq favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "productivity"],
+  "lang": "en",
+  "dir": "ltr"
+}

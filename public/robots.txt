@@ -1,0 +1,16 @@
+# Robots.txt for Ontriq
+# https://ontriq.com
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://ontriq.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow admin or private paths (if any)
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
