@@ -18,7 +18,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <header className="relative min-h-screen w-full overflow-hidden bg-white" role="banner">
+    <header className="relative min-h-screen w-full overflow-hidden bg-black" role="banner">
       <div className="absolute inset-0 z-0">
         <video
           src="https://framerusercontent.com/assets/Bax1SXv4b9QI33bMvkicABKnI.mp4"

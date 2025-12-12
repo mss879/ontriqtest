@@ -141,6 +141,8 @@ export default function RootLayout({
   return (
     <html lang="en" dir="ltr">
       <head>
+        <meta name="theme-color" content="#000000" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
         <link rel="preconnect" href="https://framerusercontent.com" />
         <link rel="dns-prefetch" href="https://framerusercontent.com" />
         <script
