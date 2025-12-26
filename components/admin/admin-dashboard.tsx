@@ -585,9 +585,12 @@ export default function AdminDashboard() {
           <div className="rounded-3xl border border-slate-200 bg-white p-8 sm:p-10 shadow-sm">
             <h1 className="text-2xl font-semibold text-slate-900">Admin Dashboard</h1>
             <p className="mt-2 text-sm text-slate-600">
-              Supabase is not configured. Add <span className="font-medium">NEXT_PUBLIC_SUPABASE_URL</span> and{' '}
-              <span className="font-medium">NEXT_PUBLIC_SUPABASE_ANON_KEY</span> in <span className="font-medium">.env.local</span>,
-              then restart the dev server.
+              Supabase is not configured. Set <span className="font-medium">NEXT_PUBLIC_SUPABASE_URL</span> and{' '}
+              <span className="font-medium">NEXT_PUBLIC_SUPABASE_ANON_KEY</span>.
+              <br />
+              Local: put them in <span className="font-medium">.env.local</span> and restart.
+              <br />
+              Hosting (Netlify): add them in Site settings → Environment variables, then redeploy (Clear cache & redeploy).
             </p>
           </div>
         </div>
