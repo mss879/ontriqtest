@@ -60,6 +60,8 @@ export function Footer() {
                 <FooterLink href="/services/recruitment">Recruitment</FooterLink>
                 <FooterLink href="/services/payroll">Payroll</FooterLink>
                 <FooterLink href="/services/company-formation">Company Formation</FooterLink>
+                <FooterLink href="/services/startup-support">Startup Support</FooterLink>
+                <FooterLink href="/services/director-services">Director Services</FooterLink>
               </ul>
             </nav>
 

@@ -12,7 +12,9 @@ import {
   Server, 
   FileText,
   CheckCircle2,
-  RefreshCw
+  RefreshCw,
+  Zap,
+  Target
 } from 'lucide-react';
 import { CTASection } from '@/components/cta-section';
 import {
@@ -24,6 +26,74 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
+
+const AnimatedSpeed = () => (
+  <div className="relative h-12 w-16 overflow-hidden flex flex-col justify-center gap-2">
+    <motion.div 
+      className="h-1.5 w-12 bg-blue-200 rounded-full self-start"
+      animate={{ x: ["-100%", "200%"], opacity: [0, 1, 0] }}
+      transition={{ duration: 1.5, repeat: Infinity, ease: "linear" }}
+    />
+    <motion.div 
+      className="h-1.5 w-16 bg-orange-500 rounded-full"
+      animate={{ x: ["-100%", "200%"], opacity: [0, 1, 0] }}
+      transition={{ duration: 1, repeat: Infinity, ease: "linear", delay: 0.2 }}
+    />
+    <motion.div 
+      className="h-1.5 w-10 bg-blue-400 rounded-full self-end"
+      animate={{ x: ["-100%", "200%"], opacity: [0, 1, 0] }}
+      transition={{ duration: 1.2, repeat: Infinity, ease: "linear", delay: 0.4 }}
+    />
+  </div>
+);
+
+const AnimatedPrecision = () => (
+  <div className="relative h-12 w-12 flex items-center justify-center">
+    <div className="absolute inset-0 border-2 border-blue-100 rounded-full" />
+    <motion.div 
+      className="h-2 w-2 rounded-full"
+      animate={{ backgroundColor: ["#bfdbfe", "#f97316", "#f97316", "#bfdbfe"] }}
+      transition={{ duration: 3, times: [0, 0.4, 0.9, 1], repeat: Infinity }}
+    />
+    <motion.div
+      className="absolute inset-0"
+      animate={{ rotate: [0, 90], scale: [1.1, 1, 1.1] }}
+      transition={{ duration: 3, repeat: Infinity }}
+    >
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 h-2 w-0.5 bg-blue-400" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 h-2 w-0.5 bg-blue-400" />
+      <div className="absolute left-0 top-1/2 -translate-y-1/2 w-2 h-0.5 bg-blue-400" />
+      <div className="absolute right-0 top-1/2 -translate-y-1/2 w-2 h-0.5 bg-blue-400" />
+    </motion.div>
+  </div>
+);
+
+const AnimatedFlexibility = () => (
+  <div className="h-12 w-12 grid grid-cols-2 gap-1.5 p-1">
+    <motion.div className="bg-orange-500 rounded-sm" animate={{ borderRadius: ["2px", "12px", "2px"] }} transition={{ duration: 2, repeat: Infinity }} />
+    <motion.div className="bg-blue-400 rounded-sm" animate={{ scale: [1, 0.7, 1] }} transition={{ duration: 2, delay: 0.5, repeat: Infinity }} />
+    <motion.div className="bg-blue-400 rounded-sm" animate={{ rotate: [0, 90, 0] }} transition={{ duration: 2, delay: 1, repeat: Infinity }} />
+    <motion.div className="bg-orange-500 rounded-sm" animate={{ borderRadius: ["2px", "50%", "2px"] }} transition={{ duration: 2, delay: 1.5, repeat: Infinity }} />
+  </div>
+);
+
+const AnimatedCompliance = () => (
+  <div className="h-14 w-10 bg-white border-2 border-blue-100 rounded-lg shadow-sm p-1.5 flex flex-col gap-1.5">
+    {[0, 1, 2].map((i) => (
+      <div key={i} className="flex items-center gap-1.5">
+        <motion.div 
+          className="h-2 w-2 rounded-full border border-blue-200"
+          animate={{ 
+            backgroundColor: ["#ffffff", "#f97316", "#f97316", "#ffffff"],
+            borderColor: ["#bfdbfe", "#f97316", "#f97316", "#bfdbfe"]
+          }}
+          transition={{ duration: 2, delay: i * 0.5, repeat: Infinity, repeatDelay: 1 }}
+        />
+        <div className="h-0.5 w-full bg-blue-50 rounded-full" />
+      </div>
+    ))}
+  </div>
+);
 
 const specs = [
   {
@@ -148,11 +218,22 @@ export function TechnologyContent() {
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4">
-                {['Speed', 'Precision', 'Flexibility', 'Compliance'].map((item, i) => (
-                  <div key={i} className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center justify-center gap-3 text-center group hover:border-[#F75834]/30 transition-colors">
-                    <div className="h-2 w-2 rounded-full bg-[#F75834] group-hover:scale-150 transition-transform"></div>
-                    <span className="font-semibold text-slate-900">{item}</span>
-                  </div>
+                {[
+                  { name: 'Speed', component: AnimatedSpeed, bg: 'bg-orange-50' },
+                  { name: 'Precision', component: AnimatedPrecision, bg: 'bg-orange-50' },
+                  { name: 'Flexibility', component: AnimatedFlexibility, bg: 'bg-orange-50' },
+                  { name: 'Compliance', component: AnimatedCompliance, bg: 'bg-orange-50' },
+                ].map((item, i) => (
+                  <motion.div 
+                    key={i} 
+                    whileHover={{ y: -5 }}
+                    className="bg-white p-6 rounded-2xl border border-slate-100 shadow-sm flex flex-col items-center justify-center gap-3 text-center group hover:border-[#F75834]/30 hover:shadow-lg hover:shadow-orange-500/5 transition-all duration-300 cursor-default"
+                  >
+                    <div className={`rounded-full ${item.bg} flex items-center justify-center mb-1 group-hover:scale-110 transition-transform duration-300`}>
+                      <item.component />
+                    </div>
+                    <span className="font-semibold text-slate-900">{item.name}</span>
+                  </motion.div>
                 ))}
               </div>
             </div>

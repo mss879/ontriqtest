@@ -44,6 +44,18 @@ const services = [
     description: 'End-to-end support for establishing your business in Sri Lanka.',
     link: '/services/company-formation',
     number: '05'
+  },
+  {
+    title: 'Startup Support Services',
+    description: 'Turning Ideas Into Successful Businesses.',
+    link: '/services/startup-support',
+    number: '06'
+  },
+  {
+    title: 'Director Services',
+    description: 'Professional Director Services to help businesses meet legal requirements.',
+    link: '/services/director-services',
+    number: '07'
   }
 ];
 

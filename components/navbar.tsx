@@ -32,6 +32,8 @@ const menuItems = [
       { label: 'Recruitment', ariaLabel: 'Recruitment', link: '/services/recruitment' },
       { label: 'Payroll', ariaLabel: 'Payroll', link: '/services/payroll' },
       { label: 'Company Formation', ariaLabel: 'Company Formation', link: '/services/company-formation' },
+      { label: 'Startup Support', ariaLabel: 'Startup Support', link: '/services/startup-support' },
+      { label: 'Director Services', ariaLabel: 'Director Services', link: '/services/director-services' },
     ]
   },
   {
@@ -40,7 +42,6 @@ const menuItems = [
     link: '/technology'
   },
   { label: 'BGV Process', ariaLabel: 'View our process', link: '/process' },
-  { label: 'Industries', ariaLabel: 'View industries', link: '/industries' },
   { label: 'FAQ', ariaLabel: 'View FAQ', link: '/faq' },
   { label: 'Contact', ariaLabel: 'Get in touch', link: '/contact' }
 ];
