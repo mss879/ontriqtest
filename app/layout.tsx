@@ -66,9 +66,6 @@ export const metadata: Metadata = {
     shortcut: '/ontriq-favicon.png',
   },
   manifest: '/manifest.json',
-  verification: {
-    google: 'RCUaE3IZIwi-RJrI4jNO6VhLIEXWxd_denItvb4J9r8',
-  },
   openGraph: {
     type: 'website',
     locale: 'en_US',
