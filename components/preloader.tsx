@@ -20,7 +20,7 @@ export default function Preloader() {
     const timer = setTimeout(() => {
       setMinTimeElapsed(true);
       setVideoLoaded(true);
-    }, 800);
+    }, 2000);
 
     return () => clearTimeout(timer);
   }, []);
